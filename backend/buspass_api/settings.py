@@ -1,0 +1,12 @@
+SECRET_KEY='academic-demo-secret'
+DEBUG=True
+ALLOWED_HOSTS=['127.0.0.1','localhost']
+INSTALLED_APPS=['django.contrib.contenttypes','django.contrib.auth','corsheaders','rest_framework']
+MIDDLEWARE=['corsheaders.middleware.CorsMiddleware','django.middleware.common.CommonMiddleware']
+ROOT_URLCONF='buspass_api.urls'
+DATABASES={'default':{'ENGINE':'django.db.backends.dummy'}}
+DEFAULT_AUTO_FIELD='django.db.models.BigAutoField'
+CORS_ALLOW_ALL_ORIGINS=True
+REST_FRAMEWORK={'DEFAULT_PERMISSION_CLASSES':['rest_framework.permissions.AllowAny']}
+TIME_ZONE='Asia/Kolkata'
+USE_TZ=True

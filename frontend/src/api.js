@@ -1,0 +1,3 @@
+const A='http://127.0.0.1:8000/api';
+const req=async(p,o={})=>{const r=await fetch(A+p,{headers:{'Content-Type':'application/json'},...o});const d=await r.json();if(!r.ok)throw Error(d.error||'Request failed');return d};
+export const api={dashboard:()=>req('/dashboard/'),apps:(q='')=>req('/applications/'+q),app:i=>req('/applications/'+i+'/'),routes:()=>req('/routes/'),types:()=>req('/pass-types/'),create:x=>req('/applications/create/',{method:'POST',body:JSON.stringify(x)}),update:(i,x)=>req('/applications/'+i+'/update/',{method:'PATCH',body:JSON.stringify(x)}),feedback:(i,x)=>req('/applications/'+i+'/feedback/',{method:'POST',body:JSON.stringify(x)}),notifications:()=>req('/notifications/')};
